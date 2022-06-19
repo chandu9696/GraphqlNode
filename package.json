@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "ts-node-dev --respawn SimpleNode.ts"
+    "SimpleNode": "ts-node-dev --respawn SimpleNode.ts",
+    "start": "ts-node-dev --respawn KovaApi.ts"
   },
   "dependencies": {
     "@koa/cors": "^3.1.0",
@@ -20,7 +21,7 @@
     "graphql-tools": "^8.2.8",
     "koa": "^2.13.1",
     "koa-graphql": "^0.12.0",
-    "koa-router": "^10.0.0",
+    "koa-router": "^10.1.1",
     "pg": "^8.6.0",
     "ts-node-dev": "^2.0.0",
     "type-graphql": "^1.1.1",
@@ -28,5 +29,8 @@
     "typescript": "^4.3.2"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@types/koa-router": "^7.4.4"
+  }
 }
