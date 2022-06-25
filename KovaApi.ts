@@ -15,7 +15,7 @@ router.get("/a",ctx=>{
     }
 })
 
-// server.use(router.routes())
+server.use(router.routes())
 server.use(cors())
 
 server.listen(process.env.PORT || 5000,()=>{console.log('here in a')})
