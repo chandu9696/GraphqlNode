@@ -4,9 +4,9 @@ import Router from 'koa-router'
 
 
 
-const server = new Koa()
+const app = new Koa()
 const router = new Router()
-
+app.use(cors())
 router.get("/",ctx=>{
     ctx.response.body="This is a Home Page"})
 router.get("/a",ctx=>{
@@ -15,7 +15,7 @@ router.get("/a",ctx=>{
     }
 })
 
-server.use(router.routes())
-server.use(cors())
+app.use(router.routes())
 
-server.listen(process.env.PORT || 5000,()=>{console.log('here in a')})
+
+app.listen(process.env.PORT || 5000,()=>{console.log('here in a')})
