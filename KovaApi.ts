@@ -1,3 +1,4 @@
+import cors from '@koa/cors'
 import Koa from 'koa'
 import Router from 'koa-router'
 
@@ -15,5 +16,6 @@ router.get("/a",ctx=>{
 })
 
 server.use(router.routes())
+server.use(cors())
 
 server.listen(process.env.PORT || 5000,()=>{console.log('here in a')})
