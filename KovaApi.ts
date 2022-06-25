@@ -6,7 +6,8 @@ import Router from 'koa-router'
 const server = new Koa()
 const router = new Router()
 
-
+router.get("/",ctx=>{
+    ctx.response.body="This is a Home Page"})
 router.get("/a",ctx=>{
     ctx.response.body={
         name:"Chand"
