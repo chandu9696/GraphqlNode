@@ -1,6 +1,6 @@
-import cors from '@koa/cors'
-import Koa from 'koa'
-import Router from 'koa-router'
+import * as cors from '@koa/cors'
+import * as Koa from 'koa'
+ import * as Router from 'koa-router'
 
 
 
