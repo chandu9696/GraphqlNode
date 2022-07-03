@@ -25,7 +25,7 @@ async function main()
     appolo.applyMiddleware({app});
     app.use(router.routes()).use(router.allowedMethods())
     app.use(cors())
-    app.listen(process.env.port ||5000,()=>{console.log("running")})
+    app.listen(process.env.PORT ||5000,()=>{console.log("running")})
 
     
 }
