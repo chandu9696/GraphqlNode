@@ -3,11 +3,11 @@ import { hotels_csv } from "./hotelOrm";
 
 
 @Resolver()
-export class hotelResolver
+export class HotelResolver
 {
     @Query(()=>[hotels_csv])
     hotels()
     {
-        hotels_csv.find()
+       return hotels_csv.find()
     }
 }

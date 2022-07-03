@@ -9,6 +9,7 @@ import { Pool } from 'pg';
 import { response } from 'express';
 import { hotels_csv } from './hotelOrm';
 import './ConnectDb.ts'
+import { getRepository } from 'typeorm';
 dotenv.config();
 
 const app = new Koa()
@@ -25,9 +26,21 @@ const router = new Router()
 // )
 app.use(cors())
 router.get("/a",async ctx=>{
-    
+    //for normal sql we used pool query
     const output=  await hotels_csv.find()
+    
     ctx.response.body=output
+})
+router.get("/:id",async ctx=>{
+    
+    // const output=  await hotels_csv.find()
+ 
+    const output = await getRepository(hotels_csv)
+    .createQueryBuilder("user")
+    .where("user.id = :id", { id: ctx.params.id})
+    .getOne();
+    ctx.response.body=output
+    
 })
 app.use(router.routes())
 
